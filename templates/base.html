@@ -1,0 +1,27 @@
+<html>
+    <link rel="stylesheet" href="{{'/static/style.css'}}">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <title>{{ title }} - Jordan's RPS game! </title>
+    </head>
+    <body>
+        <div id="head">
+        <h1>Jordan's RPS Game!</h1>
+        <ul>
+            <li><a href="/">The Rules (really?)</a></li>
+        </ul>
+        </div>
+        {% block content %}
+<h3>Welcome to the hottest game of 2021, ROCK...PAPER...SCISSORS! <br> How to play </h3>
+<h4></h4>In the URL "localhost:5000/", type your move followed by a "/" <br> Player 2 (your mum, dog...whoever) then enters their move <br> It should look a little something like "localhost:5000/rock/paper"<br> Press enter and let the battle for the ages commence!  
+
+        {% endblock %}
+        <div>
+            <footer id="footer">
+                <p> If you find this game sh#te, buy a Playstation... </p>
+            </footer>
+        </div>
+    </body>
+</html>

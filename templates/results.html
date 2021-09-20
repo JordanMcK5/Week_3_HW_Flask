@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/style.css">
+<body>
+        <h3>
+            {{player1_name}} went for the almighty {{ player1_choice }}!<br>{{player2_name}} challenged back with the powerful {{ player2_choice }}!
+        </h3>
+    
+        {% if winner == None %}
+            <h3>Draw, play again!!</h3>
+        {% else %}
+            <h3>{{ winner }} is the wining move!</h3>
+        {% endif %}
+</body>
+</html>    
+{% endblock  %}
+  
