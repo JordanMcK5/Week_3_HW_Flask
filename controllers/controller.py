@@ -7,17 +7,13 @@ from models.player import Player
 def index():
     return render_template("base.html", title="RPS")
 
-@app.route("/<player1_choice>/<player2_choice>")
-def show_winner(player1_choice, player2_choice):
-    player1 = Player("Player 1", player1_choice)
-    player2 = Player("Player 2", player2_choice)
-    winner = Game.result(Game, player1, player2)
-    return render_template(
-        "results.html",  
-        player1_name = player1.name,
-        player2_name = player2.name, 
-        player1_choice = player1.choice, 
-        player2_choice = player2.choice,
-        winner = winner
-        )
+@app.route('/<player_1_choice>/<player_2_choice>')
+def play(player_1_choice, player_2_choice):
+    player_1 = Player("Player 1", player_1_choice)
+    player_2 = Player("Player 2", player_2_choice)
+    game = Game()
+
+    winner = game.play(player_1, player_2)
+    
+    return render_template("results.html", player_1=player_1, player_2=player_2, winner=winner)
 
